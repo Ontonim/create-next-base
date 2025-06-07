@@ -1,0 +1,17 @@
+{
+  "name": "create-next-base",
+  "version": "1.0.3",
+  "description": "Professional Next.js Project Generator with Tailwind CSS and TypeScript",
+  "type": "module",
+  "bin": {
+    "create-next-base": "./index.js"
+  },
+  "keywords": ["create", "nextjs", "cli", "starter", "tailwind", "typescript"],
+  "author": "Ontonim",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "fs-extra": "^11.2.0",
+    "prompts": "^2.4.2"
+  }
+}
