@@ -58,7 +58,7 @@ console.log(chalk.green('\n🧹 Cleaning up any conflicting files...'));
 const conflicts = [
   path.join(projectPath, 'pages'),
   path.join(projectPath, 'src', 'pages'),
-  path.join(projectPath, 'src', 'app', 'page.tsx') // ✅ This will delete the unwanted page.tsx
+  path.join(projectPath, 'src', 'app', 'page.tsx')
 ];
 
 conflicts.forEach(path => {
@@ -168,20 +168,10 @@ execSync('git init', { stdio: 'inherit' });
 execSync('git add .', { stdio: 'inherit' });
 execSync('git commit -m "Initial commit: ONTONIM boilerplate"', { stdio: 'inherit' });
 
-console.log(chalk.green.bold('\n✅ Project setup complete! Tailwind CSS configured successfully.\n'));
-console.log(chalk.bold('Next steps:'));
-console.log(`1. cd ${projectName}`);
-console.log('2. pnpm dev');
-
 // 10. Start dev server
-const { startDev } = await prompts({
-  type: 'confirm',
-  name: 'startDev',
-  message: 'Would you like to start the development server now?',
-  initial: true
-});
-
-if (startDev) {
-  console.log(chalk.green('\n⚡ Starting development server...'));
-  execSync('pnpm dev', { stdio: 'inherit' });
-}
+console.log(chalk.green.bold('\n✅ Project setup complete! Now you can start the development server.\n'));
+console.log(chalk.bold('Next steps:'));
+console.log(chalk.cyan(`\n👉 1. cd ${projectName}`));
+console.log(chalk.cyan('👉 2. pnpm dev'));
+console.log(chalk.yellow('\n💡 You can start building your app now!\n'));
+console.log(chalk.green.bold('Happy Coding! 👨‍💻'))

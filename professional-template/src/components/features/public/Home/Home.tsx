@@ -343,10 +343,10 @@ export default function Home() {
                 <pre className="text-sm p-6 overflow-x-auto">
                   {`my-app/
 ├── app/
-│   ├── globals.css
-│   ├── layout.tsx
-│   ├── page.tsx
-│   └── loading.tsx
+│   ├── (auth)
+│   ├── (dashboard)
+│   ├── (route)
+│   └── (api)
 ├── components/
 │   ├── ui/
 │   │   ├── button.tsx
