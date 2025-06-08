@@ -72,7 +72,30 @@ console.log(chalk.green('\n📁 Copying ONTONIM template...'));
 const templatePath = path.join(__dirname, 'professional-template');
 await fs.copy(templatePath, projectPath);
 
-// 3.5. Replace README.md with custom version
+// 3.5 Replace default favicon in src/app with public/favicon.ico
+console.log(chalk.green('\n🔁 Replacing default favicon with custom one in public/'));
+
+const defaultFaviconPath = path.join(projectPath, 'src', 'app', 'favicon.ico');
+const customFaviconSource = path.join(__dirname, 'assets', 'favicon.ico');
+const publicFaviconTarget = path.join(projectPath, 'public', 'favicon.ico');
+
+// Step 1: Remove default src/app/favicon.ico if it exists
+if (fs.existsSync(defaultFaviconPath)) {
+  fs.removeSync(defaultFaviconPath);
+  console.log(chalk.gray('🗑️ Removed src/app/favicon.ico'));
+}
+
+// Step 2: Copy custom favicon to public directory
+if (fs.existsSync(customFaviconSource)) {
+  await fs.ensureDir(path.dirname(publicFaviconTarget));
+  await fs.copy(customFaviconSource, publicFaviconTarget);
+  console.log(chalk.green('✅ Custom favicon.ico placed in public/'));
+} else {
+  console.log(chalk.yellow('⚠️ Custom favicon.ico not found in assets/, skipping...'));
+}
+
+
+// 3.6. Replace README.md with custom version
 console.log(chalk.green('\n📝 Writing custom README.md...'));
 const customReadmePath = path.join(__dirname, 'README.md');
 const targetReadmePath = path.join(projectPath, 'README.md');
