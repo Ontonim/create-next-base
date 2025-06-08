@@ -1,6 +1,6 @@
 {
   "name": "create-next-base",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Professional Next.js Project Generator with Tailwind CSS and TypeScript",
   "type": "module",
   "bin": {
